@@ -27,4 +27,6 @@
     <string name="confirm_via_sms_hint">Confirm via SMS</string>
     <string name="confirm_via_email_hint">Confirm via Email</string>
     <string name="continue_btn_text">Continue</string>
+    <string name="forgot_password_title">Forgot password</string>
+    <string name="create_account_title">Create account</string>
 </resources>

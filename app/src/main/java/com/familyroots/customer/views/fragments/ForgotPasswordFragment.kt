@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import com.familyroots.customer.R
 
 class ForgotPasswordFragment : BaseFragment() {
@@ -15,7 +16,7 @@ class ForgotPasswordFragment : BaseFragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        getActivity()?.actionBar?.title="Forgot password"
+        (activity as AppCompatActivity).supportActionBar?.title= resources.getString(R.string.forgot_password_title)
         return inflater.inflate(R.layout.fragment_forgotpassword, container, false);
     }
 

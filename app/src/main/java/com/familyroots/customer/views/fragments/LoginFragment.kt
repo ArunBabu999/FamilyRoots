@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import com.familyroots.customer.databinding.FragmentLoginBinding
 import com.familyroots.customer.views.callbacks.LoginActivityCallback
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
 
 class LoginFragment: BaseFragment(), LoginActivityCallback {
@@ -27,7 +28,13 @@ class LoginFragment: BaseFragment(), LoginActivityCallback {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         loginBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
         loginBinding?.logincallback = this
+        (activity as AppCompatActivity).supportActionBar?.title= resources.getString(R.string.login_label)
         return loginBinding?.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity).supportActionBar?.title= resources.getString(R.string.login_label)
     }
 
     override fun onLoginClick() {
@@ -39,6 +46,6 @@ class LoginFragment: BaseFragment(), LoginActivityCallback {
     }
 
     override fun onForgotPasswordClick() {
-       getActivity()?.supportFragmentManager?.beginTransaction()?.replace(R.id.container, ForgotPasswordFragment())?.addToBackStack("Login")?.commit();
+      getActivity()?.supportFragmentManager?.beginTransaction()?.replace(R.id.container, ForgotPasswordFragment())?.addToBackStack("Login")?.commit();
     }
 }

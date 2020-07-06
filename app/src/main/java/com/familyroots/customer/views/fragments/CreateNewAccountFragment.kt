@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import com.familyroots.customer.R
 
 class CreateNewAccountFragment : BaseFragment() {
@@ -13,7 +14,7 @@ class CreateNewAccountFragment : BaseFragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        activity.setTitle("bhjbj")
+        (activity as AppCompatActivity).supportActionBar?.title= resources.getString(R.string.create_account_title)
         return inflater.inflate(R.layout.fragment_createaccount, container, false)
     }
 }
