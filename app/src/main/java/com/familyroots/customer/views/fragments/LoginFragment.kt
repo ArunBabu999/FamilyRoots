@@ -1,6 +1,7 @@
 package com.familyroots.customer.views.fragments
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import com.familyroots.customer.databinding.FragmentLoginBinding
 import com.familyroots.customer.views.callbacks.LoginActivityCallback
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.familyroots.customer.views.activities.HomePageActivity
 
 
 class LoginFragment: BaseFragment(), LoginActivityCallback {
@@ -38,7 +40,9 @@ class LoginFragment: BaseFragment(), LoginActivityCallback {
     }
 
     override fun onLoginClick() {
-        Toast.makeText(getActivity(),"Login Click",Toast.LENGTH_SHORT).show();
+        startActivity(Intent(this@LoginFragment.context, HomePageActivity::class.java))
+        //TODO once api Integration done uncomment below
+        //activity?.finish()
     }
 
     override fun onCreateAccountClick() {
