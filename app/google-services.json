@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "609231693740",
+    "firebase_url": "https://familyroots.firebaseio.com",
+    "project_id": "familyroots",
+    "storage_bucket": "familyroots.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:609231693740:android:fc7727e9d22b3da19ffc09",
+        "android_client_info": {
+          "package_name": "com.familyroots.customer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "609231693740-8kqrpmjr7j7bc7mb6kmenpb5hflt3oin.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmuwQrzL9qRuEG2ucNJODIAjvDe4tPWY8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "609231693740-8kqrpmjr7j7bc7mb6kmenpb5hflt3oin.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+    >
+        <TextView
+                android:id="@+id/hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_margin="@dimen/forgot_password_margin"
+                android:hint="@string/confirm_account_hint"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <TextView
+                android:id="@+id/confirmviasms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_margin="@dimen/forgot_password_margin"
+                android:hint="@string/confirm_via_sms_hint"
+                app:layout_constraintTop_toBottomOf="@+id/hint"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <TextView
+                android:id="@+id/confirmviaemail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_margin="@dimen/forgot_password_margin"
+                android:hint="@string/confirm_via_email_hint"
+                app:layout_constraintTop_toBottomOf="@+id/confirmviasms"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+
+        <Button
+                android:id="@+id/login"
+                android:layout_width="@dimen/login_btn_width"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/forgot_password_margin"
+                android:background="@drawable/loginbutton_shape"
+                android:text="@string/continue_btn_text"
+                android:textColor="@color/white"
+                android:textSize="@dimen/activity_button_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/confirmviaemail"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
