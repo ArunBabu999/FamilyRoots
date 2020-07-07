@@ -1,14 +1,35 @@
 package com.familyroots.customer.views.activities
 
 import android.os.Bundle
-import android.os.PersistableBundle
+import androidx.core.content.ContextCompat
+import androidx.viewpager2.widget.ViewPager2
 import com.familyroots.customer.R
+import com.familyroots.customer.adapter.ViewPagerFragmentAdapter
+import com.familyroots.customer.databinding.ActivityHomeBinding
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 
-class HomePageActivity: BaseActivity() {
+
+class HomePageActivity : BaseActivity() {
+
+    private val titles = arrayOf("Home", "Groups", "Settings")
+    private var activityLoginHomeBinding: ActivityHomeBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_forgotpassword)
+        activityLoginHomeBinding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(activityLoginHomeBinding?.root)
         supportActionBar?.title = resources.getString(R.string.app_name)
+        activityLoginHomeBinding?.viewPager?.adapter = ViewPagerFragmentAdapter(this)
+        // attaching tab mediator
+        TabLayoutMediator(
+            activityLoginHomeBinding?.tabLayout as TabLayout, activityLoginHomeBinding?.viewPager as ViewPager2
+        ) { tab, position -> tab.text = titles[position] }.attach()
+
+        TabLayoutMediator(
+            activityLoginHomeBinding?.tabLayout as TabLayout, activityLoginHomeBinding?.viewPager as ViewPager2
+        ) { tab, position ->
+            tab.text = titles[position]; tab.icon = ContextCompat.getDrawable(this, R.drawable.profile_icon)
+        }.attach()
     }
 }
