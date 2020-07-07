@@ -12,7 +12,6 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class HomePageActivity : BaseActivity() {
 
-    private val titles = arrayOf("Home", "Groups", "Settings")
     private var activityLoginHomeBinding: ActivityHomeBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,12 +23,15 @@ class HomePageActivity : BaseActivity() {
         // attaching tab mediator
         TabLayoutMediator(
             activityLoginHomeBinding?.tabLayout as TabLayout, activityLoginHomeBinding?.viewPager as ViewPager2
-        ) { tab, position -> tab.text = titles[position] }.attach()
-
-        TabLayoutMediator(
-            activityLoginHomeBinding?.tabLayout as TabLayout, activityLoginHomeBinding?.viewPager as ViewPager2
         ) { tab, position ->
-            tab.text = titles[position]; tab.icon = ContextCompat.getDrawable(this, R.drawable.profile_icon)
+            when(position){
+                0 -> {tab.icon = ContextCompat.getDrawable(this, R.drawable.home_icon)}
+                1 -> {tab.icon = ContextCompat.getDrawable(this, R.drawable.family_icon)}
+                2 -> {tab.icon = ContextCompat.getDrawable(this, R.drawable.group_icon)}
+                3 -> {tab.icon = ContextCompat.getDrawable(this, R.drawable.profile_icon)}
+                4 -> {tab.icon = ContextCompat.getDrawable(this, R.drawable.notification_icon)}
+                5 -> {tab.icon = ContextCompat.getDrawable(this, R.drawable.menu_icon)}
+            }
         }.attach()
     }
 }
